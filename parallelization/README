@@ -1,0 +1,16 @@
+These files provide generic utilities to execute computations
+in parallel using the pthread library.
+test_main.cpp provides a usage example
+
+Why did I use .hpp instead of hiding the implementation - 
+I started off trying to use boost libraries and ended up with too
+many compilation issues, so I stuck to pthreads. The design remained
+the same as the original which attempted to mimic the boost way of
+things.
+
+How not to use this code?
+Don't use this in any non-trivial situation. No sharing of 
+file handles, db handles. This is the first time I've ever
+used pthreads (or written any other multi-threaded code for
+that matter), so I expect there to be several situations
+in which this doesn't work.
