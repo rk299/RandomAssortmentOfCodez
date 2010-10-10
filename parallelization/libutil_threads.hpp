@@ -123,11 +123,12 @@ class Threads
                                                &m_computation );
         DBG1;
         DBGX2(m_threadData[i]);
+        assert(
              pthread_create( 
                 &m_threads[i],
                 NULL,
                 execute,
-                m_threadData[i]);
+                m_threadData[i]) == 0 );
         DBG1;
          }
         DBG1;
